@@ -286,11 +286,11 @@ class Filters
         }
         if (is_array($rows) && count($rows)) {
             foreach ($rows as $key => $row) {
-                if (is_array($row) && $GLOBALS['TSFE']->sys_language_content) {
+                if (is_array($row) && $GLOBALS['TSFE']->language->getLanguageId()) {
                     $row = $GLOBALS['TSFE']->sys_page->getRecordOverlay(
                         $table,
                         $row,
-                        $GLOBALS['TSFE']->sys_language_content,
+                        $GLOBALS['TSFE']->language->getLanguageId(),
                         $LanguageMode
                     );
 
